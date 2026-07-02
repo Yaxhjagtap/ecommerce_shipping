@@ -10,7 +10,10 @@ The system uses a **3D bin-packing inspired algorithm** that considers **spatial
 
 This helps reduce packaging waste, improve warehouse efficiency, and optimize shipping cost.
 
----
+---------------------------------------------------------------------------------------------------------------------------
+# Important - 
+# Navigate to http://127.0.0.1:8000/api/box-selector/recommend-box/1/ to see the Django REST Framework interface and the JSON response recommending the optimal box for Product #1.
+---------------------------------------------------------------------------------------------------------------------------
 
 # Problem Statement
 
