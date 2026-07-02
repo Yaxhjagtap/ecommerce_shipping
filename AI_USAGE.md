@@ -1,3 +1,70 @@
+# AI_USAGE.md
+
+## Entry: [02-07-2026/2:36pm]-----------------------------------------------------------------------------------------------------
+
+- **AI Tool Used:** [ Gemini 3 Pro ]
+
+- **The Prompt Given:** > 
+
+[
+Act as an expert Python/Django developer. I am building a small Django-based system for an ecommerce platform that recommends the most suitable shipping box for an order based on product dimensions, weight, and box capacity.  here is full context of problem - "We operate an ecommerce platform. When a customer places an order, the warehouse team needs to know which shipping box should be used. Each product has dimensions and weight. Each box has internal dimensions, maximum weight capacity, and cost.
+
+Your task is to design and build a small Django-based system that recommends the most suitable box for an order. "
+
+Please provide the exact, sequential terminal commands (for a Windows environment) to:
+
+1. Create and activate a Python virtual environment.
+
+2. Install Django and Django REST Framework.
+
+3. Initialize a new Django project named 'ecommerce_shipping'.
+
+4. Create a new Django app named 'box_selector'.
+
+5. Freeze the requirements into a requirements.txt file.
+
+Output only the terminal commands with very brief explanations.
+]
+
+- **Output Accepted:** [Yes]
+
+- **Output Rejected or Modified:** [No]
+
+- **Mistakes the AI Made:** [No Mistakes Made]
+
+- **Verification Steps:** [Commands Works Properly in VSCode Terminal]
+
+---
+
+## Entry: [02-07-2026/2:38pm]-----------------------------------------------------------------------------------------------------
+
+- **AI Tool Used:** [ Gemini 3 Pro ]
+
+- **The Prompt Given:** > 
+
+[
+This project requires strict tracking of AI usage in an AI_USAGE.md file. Generate a clean Markdown template for this file. It must include the following sections for each prompt I issue during this project:
+
+- AI Tool Used  
+- The Prompt Given  
+- Output Accepted  
+- Output Rejected or Modified  
+- Mistakes the AI Made  
+- Verification Steps  
+
+Format it cleanly with Markdown headers so I can easily duplicate the block and fill in my logs as we work.
+]
+
+- **Output Accepted:** [Yes]
+
+- **Output Rejected or Modified:** [No]
+
+- **Mistakes the AI Made:** [No Mistakes Made]
+
+- **Verification Steps:** [AI_USAGE.md template generated successfully]
+
+---
+
 ## Entry: [02-07-2026/2:45pm]-----------------------------------------------------------------------------------------------------
 
 - **AI Tool Used:** [ Gemini 3 Pro ]
@@ -22,6 +89,7 @@ Write the exact `models.py` code. Use `FloatField` or `DecimalField` for the dim
 
 - **Verification Steps:** [Created models.py successfully and migrations worked properly]
 
+---
 
 ## Entry: [02-07-2026/2:55pm]-----------------------------------------------------------------------------------------------------
 
@@ -55,6 +123,7 @@ Provide the most Pythonic and optimized code for this logic.
 
 - **Verification Steps:** [Implemented services.py and algorithm logic verified manually]
 
+---
 
 ## Entry: [02-07-2026/3:05pm]-----------------------------------------------------------------------------------------------------
 
@@ -80,8 +149,9 @@ Print the sorted dimensions of both, and print a boolean confirming whether the 
 
 - **Verification Steps:** [Executed standalone Python script and verified output correctly]
 
+---
 
-## Entry: [02-07-2026/3:15pm]-----------------------------------------------------------------------------------------------------
+## Entry: [02-07-2026/3:25pm]-----------------------------------------------------------------------------------------------------
 
 - **AI Tool Used:** [ Gemini 3 Pro ]
 
@@ -107,8 +177,9 @@ Please provide the code for three files:
 
 - **Verification Steps:** [Created serializers.py, views.py, urls.py and API endpoint configured successfully]
 
+---
 
-## Entry: [02-07-2026/3:25pm]-----------------------------------------------------------------------------------------------------
+## Entry: [02-07-2026/4:40pm]-----------------------------------------------------------------------------------------------------
 
 - **AI Tool Used:** [ Gemini 3 Pro ]
 
@@ -126,8 +197,9 @@ okay what to do next ? and how can i test ?
 
 - **Verification Steps:** [Added dummy data in database and tested API using browser and terminal]
 
+---
 
-## Entry: [02-07-2026/3:30pm]-----------------------------------------------------------------------------------------------------
+## Entry: [02-07-2026/5:30pm]-----------------------------------------------------------------------------------------------------
 
 - **AI Tool Used:** [ Gemini 3 Pro ]
 
@@ -145,8 +217,9 @@ now i want to setup a superuser
 
 - **Verification Steps:** [Created Django superuser and registered models in admin.py successfully]
 
+---
 
-## Entry: [02-07-2026/3:40pm]-----------------------------------------------------------------------------------------------------
+## Entry: [02-07-2026/6:40pm]-----------------------------------------------------------------------------------------------------
 
 - **AI Tool Used:** [ Gemini 3 Pro ]
 
@@ -183,3 +256,111 @@ django.template.exceptions.TemplateDoesNotExist: rest_framework/api.html"
 - **Mistakes the AI Made:** [Missed adding 'rest_framework' in INSTALLED_APPS initially]
 
 - **Verification Steps:** [Added rest_framework in settings.py and confirmed API endpoint worked successfully]
+
+---
+
+## Entry: [02-07-2026/7:05pm]-----------------------------------------------------------------------------------------------------
+
+- **AI Tool Used:** [ Gemini 3 Pro ]
+
+- **The Prompt Given:** > 
+
+[
+Act as an expert QA engineer for Python and Django. I need to write comprehensive unit tests for the Django box selection API I just built in `box_selector/tests.py`.
+
+Generate standard Django `TestCase` classes that test both the `get_best_box_for_product` service function directly, and the REST API endpoint response.
+
+You must include these specific edge cases:
+
+1. A product fits perfectly (product dimensions match box internal dimensions exactly).
+
+2. A product requires 3D rotation to fit (e.g., product L=10, W=5, H=2 fits in Box L=5, W=10, H=2).
+
+3. A product fits the dimensions but is too heavy for all available boxes.
+
+4. A product fits in multiple valid boxes, but the algorithm must successfully choose the cheapest one.
+
+5. A product does not fit in any box due to being too large.
+
+Write the complete, executable test code. Use Django's `APIClient` to test the endpoint.
+]
+
+- **Output Accepted:** [Yes]
+
+- **Output Rejected or Modified:** [Minor manual adjustments in test file]
+
+- **Mistakes the AI Made:** [No major mistakes]
+
+- **Verification Steps:** [Executed python manage.py test box_selector and verified all test cases passed successfully]
+
+---
+
+## Entry: [02-07-2026/7:20pm]-----------------------------------------------------------------------------------------------------
+
+- **AI Tool Used:** [ Gemini 3 Pro ]
+
+- **The Prompt Given:** > 
+
+[
+Act as a DevOps engineer. I need to set up a simple GitHub Actions workflow for my Django project to automate my test suite and provide a test output link for a submission.
+
+Generate the YAML code for a workflow file.
+
+The workflow should:
+
+1. Trigger on pushes and pull requests to the `main` branch.
+
+2. Use an `ubuntu-latest` runner.
+
+3. Set up Python 3.10.
+
+4. Install dependencies from `requirements.txt`.
+
+5. Run the database migrations (`python manage.py makemigrations` and `python manage.py migrate`).
+
+6. Execute the Django test suite (`python manage.py test`).
+
+Provide only the YAML configuration and briefly explain where to save this file in my repository.
+]
+
+- **Output Accepted:** [Yes]
+
+- **Output Rejected or Modified:** [No]
+
+- **Mistakes the AI Made:** [No Mistakes Made]
+
+- **Verification Steps:** [Created GitHub Actions workflow file and verified workflow syntax]
+
+---
+
+## Entry: [02-07-2026/7:35pm]-----------------------------------------------------------------------------------------------------
+
+- **AI Tool Used:** [ Gemini 3 Pro ]
+
+- **The Prompt Given:** > 
+
+[
+Act as a Senior Python Developer. Generate a highly professional `README.md` for my Django Box Selector API project.
+
+It must include the following sections formatted cleanly with Markdown:
+
+- Project Overview  
+- Tech Stack  
+- Setup Instructions  
+- Running the Server  
+- API Reference  
+- Running Tests  
+- CI/CD Pipeline  
+
+Do NOT write a "What Did I Learn" section. Leave a placeholder for me to write it manually. write a detailed md from setting up including all the commands
+]
+
+- **Output Accepted:** [Yes]
+
+- **Output Rejected or Modified:** [README updated manually according to project structure]
+
+- **Mistakes the AI Made:** [Formatting corrections needed]
+
+- **Verification Steps:** [README.md created successfully and checked locally]
+
+---
